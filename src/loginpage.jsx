@@ -38,6 +38,17 @@ export default function Login() {
         console.log();
       });
   };
+    useEffect(() => {
+    const jwt = sessionStorage.getItem("jwt");
+    const jwtlocal = localStorage.getItem("jwt");
+
+    if (jwt || jwtlocal) {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const jwt = sessionStorage.getItem("jwt") || localStorage.getItem("jwt");
+  if (jwt) return null;
   return (
     <div id="bg" className="h-dvh">
       <div className="overlay flex justify-center items-center bg-[#00000080] h-dvh">
