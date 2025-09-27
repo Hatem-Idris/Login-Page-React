@@ -10,9 +10,7 @@ export default function Homepage() {
     if (!jwt) {
       navigate("/login");
     } else {
-      let domain = "http://82.112.241.233:1993";
-      let endpoint = "/api/users/me";
-      let url = domain + endpoint;
+      let url = "/api/users/me";
       axios
         .get(url, {
           headers: {

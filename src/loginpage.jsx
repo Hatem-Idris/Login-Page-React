@@ -5,7 +5,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useState ,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -16,9 +16,7 @@ export default function Login() {
   });
   const [rememberMe, setRememberMe] = useState(false);
   const handlesubmit = (values) => {
-    let domain = "http://82.112.241.233:1993";
-    let endpoint = "/api/auth/local";
-    let url = domain + endpoint;
+    let url = "/api/auth/local";
     let data = {
       identifier: values.email,
       password: values.password,
